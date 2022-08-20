@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{- partial "head.html" . -}}
+  <body>
+
+    {{ if .IsHome }}
+    <!-- Hero -->
+    <div class="hero" data-theme="dark">
+      {{- partial "hero.html" . -}}
+    </div><!-- ./ Hero -->
+    {{ else }}
+    <!-- Navbar -->
+    {{- partial "navbar.html" . -}}
+    <!-- ./ Navbar -->
+    {{ end }}
+
+    <!-- Main -->
+    <main class="container">
+      {{- block "main" . }}{{- end }}
+    </main><!-- ./ Main -->
+
+    <!-- Footer -->
+    <footer class="container">
+      {{- partial "footer.html" . -}}
+    </footer><!-- ./ Footer -->
+
+    <!-- Minimal theme switcher -->
+    <script src="{{ .Site.BaseURL }}js/minimal-theme-switcher.js"></script>
+
+  </body>
+
 </html>

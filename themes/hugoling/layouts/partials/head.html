@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ if .IsHome }} {{ .Site.Title }} {{ else }} {{ .Title }} - {{ .Site.Title }} {{ end }}{{ end }}</title>
+  <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+  <link rel="shortcut icon"
+    href="{{ if .Site.Params.faviconfile }}{{ .Site.Params.faviconfile | absURL }}{{ else }}{{ .Site.BaseURL }}images/favicon.png{{ end }}">
+
+  <!-- Pico.css -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+  <!-- Custom styles for this example -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
+</head>
