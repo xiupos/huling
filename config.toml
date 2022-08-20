@@ -1,0 +1,4 @@
+baseURL = 'https://huling.org/'
+languageCode = 'ja'
+title = '北大言語学サークル Huling'
+theme = 'hugoling'

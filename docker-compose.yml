@@ -1,11 +1,9 @@
-version: "3"
-
+version: "3.8"
 services:
-  dev:
-    image: node:16.15.1-slim
-    ports:
-      - "3000:3000"
+  server:
+    image: klakegg/hugo:ext
+    command: server
     volumes:
-      - .:/huling
-    working_dir: /huling
-    command: bash -c "yarn && yarn dev --host"
+      - ".:/src"
+    ports:
+      - "1313:1313"
