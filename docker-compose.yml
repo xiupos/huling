@@ -2,7 +2,7 @@ version: "3.8"
 services:
   server:
     image: klakegg/hugo:ext
-    command: server
+    command: server --disableFastRender
     volumes:
       - ".:/src"
     ports:
